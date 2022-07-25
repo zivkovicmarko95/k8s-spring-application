@@ -1,0 +1,18 @@
+1. docker build image
+2. docker run image
+3. docker ps
+4. docker commit containerId username/image-name
+5. docker push username/image-name
+
+------------------------------------
+
+1. minikube service list - check all the services including the ports
+2. kubectl port-forward service/service-name port:port
+------------------------------------
+
+1. minikube dashboard
+
+------------------------------------
+
+delete whole k8s cluster
+1. 
