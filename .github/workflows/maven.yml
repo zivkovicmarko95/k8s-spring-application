@@ -26,13 +26,13 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: test
-      run: echo ${{ secrets.DOCKER.USERNAME }}
+      run: echo ${{ secrets.USERNAME }}
   
     - name: Docker Login
       uses: docker/login-action@v2.0.0
       with:
-        username: ${{ secrets.DOCKER.USERNAME }}
-        password: ${{ secrets.DOCKER.PASSWORD }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
         
     - name: Extract metadata (tags, labels) for Docker
       id: meta
