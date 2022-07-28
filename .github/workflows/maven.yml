@@ -43,6 +43,6 @@ jobs:
       with:
         context: first-component
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+        tags: 09031995/first-component
+#         labels: ${{ steps.meta.outputs.labels }}
 
