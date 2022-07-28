@@ -16,6 +16,7 @@ public class FirstComponentApplication {
 		for (int i = 0; i < 10; i++) {
 			LOGGER.info("This is small test, image testing. Iteration: {}", i);
 		}
+		LOGGER.info("This is an extra logger which doesn't do anything");
 	}
 
 }
