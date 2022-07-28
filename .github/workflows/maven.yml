@@ -44,5 +44,17 @@ jobs:
         context: first-component
         push: true
         tags: 09031995/first-component
-#         labels: ${{ steps.meta.outputs.labels }}
 
+    - name: Build and push second-component image
+      uses: docker/build-push-action@v3.1.0
+      with:
+        context: second-component
+        push: true
+        tags: 09031995/second-component
+
+    - name: Build and push gateway-component image
+      uses: docker/build-push-action@v3.1.0
+      with:
+        context: gateway-component
+        push: true
+        tags: 09031995/gateway-component

@@ -15,4 +15,6 @@
 ------------------------------------
 
 delete whole k8s cluster
-1. 
+1. kubectl delete -f ./
+
+for db always use external DB
