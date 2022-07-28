@@ -22,6 +22,14 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+
+    - name: Check what is in github object
+      run: | 
+        echo github: ${{ github }}
+        echo github event: ${{ github.event }}
+        echo github event issue: ${{ github.event.issue }}
+        echo github event pull_request merged: ${{ github.event.pull_request.merged }}
+        echo github event client_payload: ${{ github.event.client_payload }}
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml
@@ -37,18 +45,18 @@ jobs:
       with:
         context: first-component
         push: true
-        tags: 09031995/first-component
+        tags: ${{ secrets.USERNAME }}/first-component
 
     - name: Build and push second-component image
       uses: docker/build-push-action@v3.1.0
       with:
         context: second-component
         push: true
-        tags: 09031995/second-component
+        tags: ${{ secrets.USERNAME }}/second-component
 
     - name: Build and push gateway-component image
       uses: docker/build-push-action@v3.1.0
       with:
         context: gateway-component
         push: true
-        tags: 09031995/gateway-component
+        tags: ${{ secrets.USERNAME }}/gateway-component
