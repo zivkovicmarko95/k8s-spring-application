@@ -32,12 +32,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@v4.0.1
-      with:
-       images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-        
     - name: Build and push first-component image
       uses: docker/build-push-action@v3.1.0
       with:
