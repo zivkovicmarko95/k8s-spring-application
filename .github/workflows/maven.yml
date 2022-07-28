@@ -22,9 +22,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-
-    - name: Check what is in github object
-      run: echo github event ${{ toJSON(github.event) }}
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml
