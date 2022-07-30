@@ -30,7 +30,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Run the application in Docker container
-      uses: actions/checkout@v3
       run: docker-compose up
   
     - name: Docker Login
