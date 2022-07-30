@@ -14,8 +14,8 @@
 	<artifactId>k8s-spring-application</artifactId>
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
-	<name>clientslane</name>
-	<description>ClientsLane API</description>
+	<name>k8s-spring-application</name>
+	<description>K8S spring application API</description>
 
 	<properties>
 		<java.version>11</java.version>

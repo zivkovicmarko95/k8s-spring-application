@@ -22,6 +22,9 @@ services:
     restart: on-failure
     ports:
       - 8080:8080
+    environment:
+      FIRST_COMPONENT_URL: first-component-app:8081
+      SECOND_COMPONENT_URL: second-component-app:8082
     depends_on:
       - first-component-app
       - second-component-app
