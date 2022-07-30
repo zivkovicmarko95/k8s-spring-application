@@ -17,18 +17,15 @@ spec:
       containers:
       - name: second-component-app
         image: 09031995/second-component:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8082
+        resources: {}
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: second-component-svc
+  labels:
+    app: second-component-svc
 spec:
   selector:
     app: second-component-app

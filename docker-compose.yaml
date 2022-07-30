@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  
+  first-component-app:
+    image:  09031995/first-component:latest
+    container_name: first-component-app
+    restart: on-failure
+    ports:
+      - 8081:8081
+
+  second-component-app:
+    image:  09031995/second-component:latest
+    container_name: second-component-app
+    restart: on-failure
+    ports:
+      - 8082:8082
+
+  gateway-component-app:
+    image:  09031995/gateway-component:latest
+    container_name: gateway-component-app
+    restart: on-failure
+    ports:
+      - 8080:8080
+    depends_on:
+      - first-component-app
+      - second-component-app

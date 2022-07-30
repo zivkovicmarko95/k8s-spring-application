@@ -17,18 +17,15 @@ spec:
       containers:
       - name: first-component-app
         image: 09031995/first-component:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8081
+        resources: {}
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: first-component-svc
+  labels:
+    app: first-component-svc
 spec:
   selector:
     app: first-component-app

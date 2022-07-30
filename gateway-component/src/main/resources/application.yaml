@@ -5,12 +5,12 @@ spring:
     cloud:
         gateway:
             routes:
-                - id: first-component
-                  uri: http://localhost:8081
+                - id: first-component-app
+                  uri: ${FIRST_COMPONENT_URL}
                   predicates:
                     - Path=/api/v1/first
 
-                - id: second-component
-                  uri: http://localhost:8082
+                - id: second-component-app
+                  uri: ${SECOND_COMPONENT_URL}
                   predicates:
                     - Path=/api/v1/second

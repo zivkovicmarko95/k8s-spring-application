@@ -17,12 +17,12 @@ spec:
       containers:
       - name: gateway-component-app
         image: 09031995/gateway-component:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8080
+        resources: {}
+        env:
+          - name: FIRST_COMPONENT_URL
+            value: http://first-component-svc:8081
+          - name: SECOND_COMPONENT_URL
+            value: http://second-component-svc:8082
 
 ---
 apiVersion: v1
