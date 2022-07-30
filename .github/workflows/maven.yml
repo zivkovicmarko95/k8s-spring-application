@@ -29,10 +29,6 @@ jobs:
     - name: Run the application in Docker container
       run: docker-compose up -d
 
-      # RUN E2E tests
-    - name: Run LS command tests
-      run: ls
-  
     - name: Docker Login
       uses: docker/login-action@v2.0.0
       with:
