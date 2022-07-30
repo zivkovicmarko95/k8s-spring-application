@@ -28,6 +28,10 @@ jobs:
         FIRST_COMPONENT_URL: http://localhost:8081
         SECOND_COMPONENT_URL: http://localhost:8082
       run: mvn -B package --file pom.xml
+
+    - name: Run the application in Docker container
+    - uses: actions/checkout@v3
+      run: docker-compose up
   
     - name: Docker Login
       uses: docker/login-action@v2.0.0
