@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-component-svc
+  labels:
+    app: first-component-svc
+spec:
+  selector:
+    app: first-component-app
+  ports:
+  - port: 8081
+    targetPort: 8081
