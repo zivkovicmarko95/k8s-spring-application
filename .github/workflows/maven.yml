@@ -26,9 +26,6 @@ jobs:
         SECOND_COMPONENT_URL: http://second-component-app:8082
       run: mvn -B package --file pom.xml
 
-    - name: Run the application in Docker container
-      run: docker-compose up -d
-
     - name: Docker Login
       uses: docker/login-action@v2.0.0
       with:
